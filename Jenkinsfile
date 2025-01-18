@@ -26,7 +26,7 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+       /* stage('Deliver') {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-linux:python2'
@@ -40,6 +40,6 @@ pipeline {
                     archiveArtifacts 'dist/add2vals'
                 }
             }
-        }
+        }*/
     }
 }
