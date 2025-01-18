@@ -3,7 +3,7 @@ node {
         docker.image('python:2-alpine').inside {
             sh 'python -m py_compile sources/add2vals.py sources/calc.py'
         }
-    }
+    } // menggunakan docker image python:2-alpine2 untuk menjalankan python -m py py_compile
 
     stage('Test') {
         docker.image('qnib/pytest').inside {
@@ -13,7 +13,7 @@ node {
                 junit 'test-reports/results.xml'
             }
         }
-    }
+    } // menggunakan docker image qnib/pyest untuk pengujian py.test dan file hasil pengujian ditaruh di reports/results.xml
 
     /* stage('Deliver') {
         docker.image('cdrx/pyinstaller-linux:python2').inside {
