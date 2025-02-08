@@ -17,7 +17,7 @@ node {
 
     stage('Deploy') {
         docker.image('python:2-alpine').inside {
-            sh 'python sources/add2vals.py'
+            sh 'python sources/add2vals.py 5 10'
             echo 'Deployment berhasil dilakukan!'
         }
     }
