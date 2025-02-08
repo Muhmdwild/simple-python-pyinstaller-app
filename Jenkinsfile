@@ -15,10 +15,10 @@ node {
         }
     } // menggunakan docker image qnib/pyest untuk pengujian py.test dan file hasil pengujian ditaruh di reports/results.xml
 
-    /* stage('Deliver') {
+     stage('Deliver') {
         docker.image('cdrx/pyinstaller-linux:python2').inside {
             sh 'pyinstaller --onefile sources/add2vals.py'
         }
         archiveArtifacts 'dist/add2vals'
-    } */
+    } 
 }
