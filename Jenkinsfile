@@ -14,17 +14,11 @@ node {
             }
         }
     } // menggunakan docker image qnib/pyest untuk pengujian py.test dan file hasil pengujian ditaruh di reports/results.xml
-    
+
     stage('Deploy') {
         docker.image('python:2-alpine').inside {
             sh 'python sources/add2vals.py'
             echo 'Deployment berhasil dilakukan!'
         }
     }
-/*     stage('Deliver') {
-        docker.image('cdrx/pyinstaller-linux:python2').inside {
-            sh 'pyinstaller --onefile sources/add2vals.py'
-        }
-        archiveArtifacts 'dist/add2vals'
-    } */
 }
