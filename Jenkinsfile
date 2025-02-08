@@ -14,10 +14,10 @@ node {
             }
         }
     } // menggunakan docker image qnib/pyest untuk pengujian py.test dan file hasil pengujian ditaruh di reports/results.xml
-    
+
     stage('Manual Approval') {
-        input message: 'Apakah Anda ingin melanjutkan eksekusi pipeline?', ok: 'Lanjutkan'
-        echo 'Pipeline dilanjutkan setelah persetujuan manual.'
+        input message: 'Apakah Anda ingin melanjutkan ke tahap Deploy?', ok: 'Lanjutkan'
+        echo 'Tahap Deploy dilanjutkan setelah persetujuan manual.'
     }
 
     stage('Deploy') {
