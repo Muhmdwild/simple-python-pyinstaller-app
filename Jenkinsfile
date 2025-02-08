@@ -16,9 +16,11 @@ node {
     } // menggunakan docker image qnib/pyest untuk pengujian py.test dan file hasil pengujian ditaruh di reports/results.xml
 
     stage('Deploy') {
-        docker.image('python:2-alpine').inside {
-            sh 'python sources/add2vals.py 5 10'
-            echo 'Deployment berhasil dilakukan!'
+    docker.image('python:2-alpine').inside {
+        sh 'python sources/add2vals.py 5 10' // Contoh menjalankan dengan argumen 5 dan 10
+        echo 'Aplikasi berjalan selama 1 menit...'
+        sh 'sleep 60' // Menjeda eksekusi selama 1 menit
+        echo 'Waktu habis, eksekusi pipeline selesai.'
         }
     }
 }
